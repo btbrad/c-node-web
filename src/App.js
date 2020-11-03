@@ -1,13 +1,17 @@
 import './App.less';
 import RouterList from './router/index'
-import {Button} from 'antd'
+import { Layout, Button } from 'antd'
+import Header from './components/Header/index'
 
 function App() {
   return (
-    <div>
-      <Button type='primary'>按钮</Button>
-      <RouterList />
-    </div>
+    <Layout>
+      <Header />
+      <Layout.Content>
+        <Button type='primary'>按钮</Button>
+        <RouterList />
+      </Layout.Content>
+    </Layout>
   );
 }
 

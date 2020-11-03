@@ -2,6 +2,7 @@ import React from 'react'
 import { Menu, Layout, Row, Col } from 'antd'
 import { Link } from 'react-router-dom'
 import './index.less'
+import logo from '../../static/images/logo.png'
 
 const { Header } = Layout
 
@@ -11,7 +12,7 @@ export default function Head() {
       <Col span={8}>
         <div className="logo">
           <Link to="/">
-            <img src={require('../../static/images/logo.png')} alt='logo' />
+            <img src={logo} alt='logo' />
           </Link>
         </div>
       </Col>

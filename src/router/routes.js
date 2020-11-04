@@ -2,6 +2,8 @@ import React from 'react'
 import Home from '../views/Home/Home'
 import About from '../views/About/About'
 import Start from '../views/Start/Start'
+import TopicPage from '../views/topic/index'
+import UserPage from '../views/user/index'
 import NotFound from '../views/404/404'
 
 const routes = [
@@ -29,6 +31,22 @@ const routes = [
       return <About {...props} />
     },
     isNav: true
+  },
+  {
+    name: '主题详情',
+    path: '/topic/:id',
+    exact: true,
+    render: (props) => {
+      return <TopicPage {...props} />
+    }
+  },
+  {
+    name: '用户详情',
+    path: '/user/:id',
+    exact: true,
+    render: (props) => {
+      return <UserPage {...props} />
+    }
   },
   {
     name: '404',

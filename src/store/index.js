@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import list from './reducer'
+import topics from './reducers/topics'
 
 const store = createStore(combineReducers({
-  list
+  topics
 }), applyMiddleware(thunk))
 
 export default store

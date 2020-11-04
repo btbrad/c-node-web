@@ -1,6 +1,4 @@
-const defaultState = {
-  list: []
-}
+const defaultState = []
 
 function reducer(state=defaultState, action) {
   switch(action.type) {

@@ -1,6 +1,6 @@
 import './App.less';
 import RouterList from './router/index'
-import { Layout, Button } from 'antd'
+import { Layout } from 'antd'
 import Header from './components/Header/index'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <Layout>
       <Header />
       <Layout.Content>
-        <Button type='primary'>按钮</Button>
+        {/* <Button type='primary'>按钮</Button> */}
         <RouterList />
       </Layout.Content>
     </Layout>

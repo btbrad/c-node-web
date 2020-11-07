@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Menu, Layout, Row, Col, Affix } from 'antd'
 import { Link, useLocation } from 'react-router-dom'
 import './index.less'
@@ -7,10 +7,17 @@ import routes from '../../router/routes'
 
 const { Header } = Layout
 
+const navigators = routes.filter(item => item.isNav)
+
 export default function Head() {
 
   const { pathname } = useLocation()
-  const currentKey = routes.filter(item => item.isNav).findIndex(item => item.path === pathname)
+
+  const [currentKey, setCurrentKey] = useState(0)
+
+  useEffect(() => {
+    setCurrentKey(navigators.findIndex(item => item.path === pathname))
+  }, [pathname])
 
   return (
     <Affix offsetTop={0}>
@@ -24,13 +31,10 @@ export default function Head() {
             </div>
           </Col>
           <Col span={20}>
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={[`${currentKey}`]}>
+            <Menu theme="dark" mode="horizontal" selectedKeys={[`${currentKey}`]}>
               {
-                routes.filter(item => item.isNav).map((item, index) => <Menu.Item key={index}><Link to={item.path}>{item.name}</Link></Menu.Item>)
+                navigators.map((item, index) => <Menu.Item key={index}><Link to={item.path}>{item.name}</Link></Menu.Item>)
               }
-              {/* <Menu.Item key="1">nav 1</Menu.Item>
-              <Menu.Item key="2">nav 2</Menu.Item>
-              <Menu.Item key="3">nav 3</Menu.Item> */}
             </Menu>
           </Col>
         </Row>

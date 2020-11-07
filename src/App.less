@@ -3,5 +3,38 @@
 .container {
   width: 100%;
   min-height: calc(100vh - 134px);
+}
+
+.wrapper {
+  width: 100%;
   background: #fff;
+  min-height: calc(100vh - 134px);
+}
+
+// 响应式
+
+// < 576px
+@media screen and (min-width: 576px) {
+  .wrapper {
+    padding: 10px 10px;
+  }
+}
+// < 768px
+@media screen and (min-width: 768px) {
+  .wrapper {
+    padding: 10px 15px;
+  }
+}
+// < 992px
+@media screen and (min-width: 992px) {
+  .wrapper {
+    padding: 10px 20px;
+  }
+}
+// < 1200px
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1000px;
+    margin: 0 auto 0;
+  }
 }

@@ -13,7 +13,9 @@ function App() {
       <Header />
       <Layout.Content className="container">
         {/* <Button type='primary'>按钮</Button> */}
-        <RouterList />
+        <div className="wrapper">
+          <RouterList />
+        </div>
       </Layout.Content>
       <Footer />
     </Layout>

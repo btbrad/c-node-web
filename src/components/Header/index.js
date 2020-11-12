@@ -3,7 +3,7 @@ import { Menu, Layout, Row, Col, Affix } from 'antd'
 import { Link, useLocation } from 'react-router-dom'
 import './index.less'
 import logo from '../../static/images/logo.png'
-import routes from '../../router/routes'
+import { routes } from '../../router/routes'
 
 const { Header } = Layout
 

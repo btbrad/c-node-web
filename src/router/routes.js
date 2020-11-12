@@ -57,4 +57,31 @@ const routes = [
   }
 ]
 
-export default routes
+const indexTabs = [
+  {
+    name: '全部',
+    tab: 'all'
+  },
+  {
+    name: '精华',
+    tab: 'good'
+  },
+  {
+    name: '分享',
+    tab: 'share'
+  },
+  {
+    name: '问答',
+    tab: 'ask'
+  },
+  {
+    name: '招聘',
+    tab: 'job'
+  },
+  {
+    name: 'dev',
+    tab: 'test'
+  }
+]
+
+export {routes, indexTabs}

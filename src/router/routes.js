@@ -5,12 +5,21 @@ import Start from '../views/Start/Start'
 import TopicPage from '../views/topic/index'
 import UserPage from '../views/user/index'
 import NotFound from '../views/404/404'
+import qs from 'qs'
+import { Redirect } from 'react-router-dom'
 
 const routes = [
   {
     name: '首页',
     path: '/',
     render: (props) => {
+      let { location : {search} } = props
+      let { tab, page } = qs.parse(search.substr(1))
+      if (!tab && !page) {
+        return <Redirect to={`/?tab=${indexTabs[0].tab}&page=1`} />
+      } else if (tab && (!page || isNaN(page))) {  
+        return <Redirect to={`/?tab=${tab}&page=1`} />
+      }
       return <Home {...props} />
     },
     exact:true,
@@ -79,8 +88,8 @@ const indexTabs = [
     tab: 'job'
   },
   {
-    name: 'dev',
-    tab: 'test'
+    name: '测试',
+    tab: 'dev'
   }
 ]
 

@@ -23,14 +23,14 @@ export default function Head() {
     <Affix offsetTop={0}>
       <Header>
         <Row>
-          <Col span={4} xs={8} sm={4}>
+          <Col span={4} xs={8}>
             <div className="logo">
               <Link to="/">
                 <img src={logo} alt='logo' />
               </Link>
             </div>
           </Col>
-          <Col span={20} xs={16} sm={20}>
+          <Col span={20} xs={16}>
             <Menu theme="dark" mode="horizontal" selectedKeys={[`${currentKey}`]}>
               {
                 navigators.map((item, index) => <Menu.Item key={index}><Link to={item.path}>{item.name}</Link></Menu.Item>)

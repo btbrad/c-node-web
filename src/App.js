@@ -3,10 +3,8 @@ import RouterList from './router/index'
 import { Layout } from 'antd'
 import Header from './components/Header/index'
 import Footer from './components/Footer/index'
-import { useSelector } from 'react-redux'
-function App() {
 
-  console.log(useSelector(state => state))
+function App() {
 
   return (
     <Layout>

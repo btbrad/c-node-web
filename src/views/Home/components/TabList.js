@@ -23,8 +23,9 @@ function TabList() {
         dataSource={data}
         renderItem={item => (
           <List.Item
-            key={item.title}
+            key={item.id}
           >
+          {item.title}
         </List.Item>)}
         loading={loading}
       >

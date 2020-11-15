@@ -5,6 +5,12 @@ import { useSelector } from 'react-redux'
 import { useGetTabList } from '../../../store/actions'
 import TopicTag from './TopicTag'
 import { Link } from 'react-router-dom'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+const relativeTime = require('dayjs/plugin/relativeTime')
+
+dayjs.locale('zh-cn')
+dayjs.extend(relativeTime)
 
 function TabList() {
 
@@ -16,7 +22,7 @@ function TabList() {
     getTabList()
   },[])
 
-  console.log(topic, data)
+  console.log(topic, data, dayjs())
 
   return (
     <div>
@@ -37,6 +43,9 @@ function TabList() {
             <Col span={20}>
               <TopicTag />
               <Link to={`/topic/${item.id}`}>{item.title}</Link>
+            </Col>
+            <Col>
+              {dayjs().from(item.date)}
             </Col>
           </Row>
         </List.Item>)}

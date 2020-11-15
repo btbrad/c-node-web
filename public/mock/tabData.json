@@ -4,19 +4,22 @@
       "id": 1,
       "user_id": 3396,
       "title": "Project Babel 帮助你在云平台上搭建自己的社区",
-      "content": "aaaaaaaaaaaaaa"
+      "content": "aaaaaaaaaaaaaa",
+      "date": "2019-08-08 11:00:00"
     },
     {
       "id": 2,
       "user_id": 3396,
       "title": "Project Babel 帮助你在云平台上搭建自己的社区",
-      "content": "aaaaaaaaaaaaaa"
+      "content": "aaaaaaaaaaaaaa",
+      "date": "2019-08-08"
     },
     {
       "id": 3,
       "user_id": 3396,
       "title": "Project Babel 帮助你在云平台上搭建自己的社区",
-      "content": "aaaaaaaaaaaaaa"
+      "content": "aaaaaaaaaaaaaa",
+      "date": "2019-08-08"
     }
   ]
 }

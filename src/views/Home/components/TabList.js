@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { List, Avatar, Row, Col } from 'antd'
+import { List, Avatar, Row, Col, Pagination } from 'antd'
 import { UserOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux'
 import { useGetTabList } from '../../../store/actions'
@@ -52,6 +52,7 @@ function TabList() {
         loading={loading}
       >
       </List>
+      <Pagination defaultCurrent={1} total={3} />
     </div>
   )
 }

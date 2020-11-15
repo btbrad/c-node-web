@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
-import { List } from 'antd'
+import { List, Avatar, Row, Col } from 'antd'
+import { UserOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux'
 import { useGetTabList } from '../../../store/actions'
+import TopicTag from './TopicTag'
+import { Link } from 'react-router-dom'
 
 function TabList() {
 
@@ -11,7 +14,7 @@ function TabList() {
 
   useEffect(() => {
     getTabList()
-  }, [])
+  },[])
 
   console.log(topic, data)
 
@@ -25,7 +28,17 @@ function TabList() {
           <List.Item
             key={item.id}
           >
-          {item.title}
+          <Row>
+            <Col span={2}>
+              <Link to={`/user/${item.user_id}`}>
+                <Avatar size="small" icon={<UserOutlined />} />
+              </Link>
+            </Col>
+            <Col span={20}>
+              <TopicTag />
+              <Link to={`/topic/${item.id}`}>{item.title}</Link>
+            </Col>
+          </Row>
         </List.Item>)}
         loading={loading}
       >

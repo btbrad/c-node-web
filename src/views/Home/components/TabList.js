@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import { List } from 'antd'
+import { Avatar, List, Image } from 'antd'
 import { useSelector } from 'react-redux'
 import { useGetTabList } from '../../../store/actions'
+
 
 function TabList() {
 
@@ -23,8 +24,13 @@ function TabList() {
         dataSource={data}
         renderItem={item => (
           <List.Item
-            key={item.title}
+            key={item.id}
           >
+            <p className="row">
+              <Avatar shape="square" src={<Image src={item.author.avatar_url} />}></Avatar>
+              <span className="title">{item.title}</span>
+              <span className="content" dangerouslySetInnerHTML={{__html: item.content}}></span>
+            </p>
         </List.Item>)}
         loading={loading}
       >

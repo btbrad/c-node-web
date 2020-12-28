@@ -8,7 +8,7 @@ export function useGetTabList() {
     dispatch({
       type: 'load_start'
     })
-    http.get('/tabData').then(res => {
+    http.get('/topics').then(res => {
       console.log(res)
     }).catch(error => {
       console.log(error)

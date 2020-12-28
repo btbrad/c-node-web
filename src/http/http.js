@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const http = axios.create({
-  baseURL: 'http://localhost:3000/mock/'
+  baseURL: 'https://cnodejs.org/api/v1'
 })
 
 export default http

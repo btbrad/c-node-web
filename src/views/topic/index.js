@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function UserPage() {
   return (
-    <div>用户详情</div>
+    <div>主题详情</div>
   )
 }

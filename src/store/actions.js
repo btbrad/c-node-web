@@ -8,13 +8,12 @@ export function useGetTabList() {
     dispatch({
       type: 'load_start'
     })
-    http.get('/topics?page=1&tab=all&limit=10').then(res => {
-      console.log('首页数据', res)
+    http.get('/topics').then(res => {
+      console.log(res)
       if (res.data.success) {
-
         dispatch({
-          type: 'load_stop',
-          payload: res.data.data 
+          type: 'load_finish',
+          payload: res.data.data
         })
       }
     }).catch(error => {

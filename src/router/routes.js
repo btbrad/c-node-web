@@ -87,10 +87,10 @@ const indexTabs = [
     name: '招聘',
     tab: 'job'
   },
-  {
-    name: '测试',
-    tab: 'dev'
-  }
+  // {
+  //   name: '测试',
+  //   tab: 'dev'
+  // }
 ]
 
 export {routes, indexTabs}

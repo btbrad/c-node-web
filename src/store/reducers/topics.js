@@ -10,6 +10,8 @@ function reducer(state = defaultState, action) {
       return {...state, loading: true}
     case 'load_finish':
       return {...state, data: action.payload, loading: false}
+    case 'change_topic':
+      return {...state, topic: action.payload}
     default:  
       return state
   }

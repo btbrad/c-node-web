@@ -1,14 +1,14 @@
 import http from '../http/http'
-import { useDispatch } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
 
 export function useGetTabList() {
   const dispatch = useDispatch()
+  const {topic} = useSelector(state => state.topics)
   return () => {
     dispatch({
       type: 'load_start'
     })
-    http.get('/topics?tab=all&page=1&limit=10').then(res => {
+    http.get(`/topics?tab=${topic}&page=1&limit=10`).then(res => {
       console.log(res)
       if (res.data.success) {
         dispatch({
@@ -19,5 +19,15 @@ export function useGetTabList() {
     }).catch(error => {
       console.log(error)
     }) 
+  }
+}
+
+export function useChangeTopic(topic) {
+  const dispatch = useDispatch()
+  return topic => {
+    dispatch({
+      type: 'change_topic',
+      payload: topic
+    })
   }
 }

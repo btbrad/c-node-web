@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Menu } from 'antd'
 import { indexTabs } from '../../../router/routes'
 import { Link, useLocation } from 'react-router-dom'
-// import { useGetTabList } from '../../../store/actions'
+import { useChangeTopic} from '../../../store/actions'
 import qs from 'qs'
 
 function IndexTabs(props) {
@@ -12,11 +12,11 @@ function IndexTabs(props) {
   let {tab} = qs.parse(search.substr(1))
   let [selectedKey, setSelectedKey] = useState('0')
 
-  // const getTabList = useGetTabList()
+  const changeTopic = useChangeTopic()
 
   useEffect(() => {
     setSelectedKey(indexTabs.findIndex(item => item.tab === tab))
-    // getTabList()
+    changeTopic(tab)
   }, [tab])
 
 

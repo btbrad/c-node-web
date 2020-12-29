@@ -4,7 +4,10 @@ import { indexTabs } from '../../../router/routes'
 
 function TopicTag(props) {
 
-  const tag = indexTabs.filter(item => item.tab === props.tab)[0].name
+  const aTab = props.tab || 'share'
+
+  console.log(indexTabs.filter(item => item.tab === aTab))
+  const tag = indexTabs.filter(item => item.tab === aTab)[0].name
 
   return (
     <Tag color="cyan">{tag}</Tag>

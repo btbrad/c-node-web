@@ -21,7 +21,7 @@ function TabList() {
 
   useEffect(() => {
     getTabList()
-  },[])
+  },[topic])
 
   console.log(topic, data, dayjs())
 

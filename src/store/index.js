@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import topics from './reducers/topics'
+import detail from './reducers/detail'
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -14,7 +15,8 @@ const enhancer = composeEnhancers(
   // other store enhancers if any
 );
 const store = createStore(combineReducers({
-  topics
+  topics,
+  detail
 }), enhancer)
 
 export default store

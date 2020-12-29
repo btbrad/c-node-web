@@ -1,3 +1,5 @@
+import { TOPIC_LOADING_START, TOPIC_LOADING_FINISH, TOPIC_CHANGE_TOPIC } from '../actionTypes'
+
 const defaultState = {
   topic: 'all',
   data: [],
@@ -6,11 +8,11 @@ const defaultState = {
 
 function reducer(state = defaultState, action) {
   switch(action.type) {
-    case 'load_start': 
+    case TOPIC_LOADING_START: 
       return {...state, loading: true}
-    case 'load_finish':
+    case TOPIC_LOADING_FINISH:
       return {...state, data: action.payload, loading: false}
-    case 'change_topic':
+    case TOPIC_CHANGE_TOPIC:
       return {...state, topic: action.payload}
     default:  
       return state

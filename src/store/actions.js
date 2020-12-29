@@ -1,18 +1,19 @@
 import http from '../http/http'
 import { useDispatch, useSelector } from 'react-redux'
+import { TOPIC_LOADING_START, TOPIC_LOADING_FINISH, TOPIC_CHANGE_TOPIC } from './actionTypes'
 
 export function useGetTabList() {
   const dispatch = useDispatch()
   const {topic} = useSelector(state => state.topics)
   return () => {
     dispatch({
-      type: 'load_start'
+      type: TOPIC_LOADING_START
     })
     http.get(`/topics?tab=${topic}&page=1&limit=10`).then(res => {
       console.log(res)
       if (res.data.success) {
         dispatch({
-          type: 'load_finish',
+          type: TOPIC_LOADING_FINISH,
           payload: res.data.data
         })
       }
@@ -26,8 +27,15 @@ export function useChangeTopic(topic) {
   const dispatch = useDispatch()
   return topic => {
     dispatch({
-      type: 'change_topic',
+      type: TOPIC_CHANGE_TOPIC,
       payload: topic
     })
   }
 }
+
+// export function useGetTopicDetail() {
+//   const dispatch = useDispatch()
+//   return () => {
+//     http.get(`/topic/${}`)
+//   }   
+// }

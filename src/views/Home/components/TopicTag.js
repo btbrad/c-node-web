@@ -6,7 +6,6 @@ function TopicTag(props) {
 
   const aTab = props.tab || 'share'
 
-  console.log(indexTabs.filter(item => item.tab === aTab))
   const tag = indexTabs.filter(item => item.tab === aTab)[0].name
 
   return (

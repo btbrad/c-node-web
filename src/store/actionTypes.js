@@ -1,3 +1,6 @@
 export const TOPIC_LOADING_START = 'topic_loading_start'
 export const TOPIC_LOADING_FINISH = 'topic_loading_finish'
 export const TOPIC_CHANGE_TOPIC = 'topic_change_topic'
+export const DETAIL_LOADING_START = 'detail_loading_start'
+export const DETAIL_SET_ID = 'detail_set_id'
+export const DETAIL_SET_CONTENT = 'detail_set_content'

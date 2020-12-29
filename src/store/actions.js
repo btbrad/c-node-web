@@ -8,7 +8,7 @@ export function useGetTabList() {
     dispatch({
       type: 'load_start'
     })
-    http.get('/topics').then(res => {
+    http.get('/topics?tab=all&page=1&limit=10').then(res => {
       console.log(res)
       if (res.data.success) {
         dispatch({

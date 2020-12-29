@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { List, Avatar, Row, Col, Pagination } from 'antd'
-import { UserOutlined } from '@ant-design/icons';
+//import { UserOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux'
 import { useGetTabList } from '../../../store/actions'
 import TopicTag from './TopicTag'
@@ -45,18 +45,18 @@ function TabList() {
               </Link>
             </Col>
             <Col span={20}>
-              <TopicTag />
+              <TopicTag tab={item.tab}/>
               <Link to={`/topic/${item.id}`}>{item.title}</Link>
             </Col>
             <Col>
-              {dayjs().from(item.date)}
+              {dayjs().from(item.create_at)}
             </Col>
           </Row>
         </List.Item>)}
         loading={loading}
       >
       </List>
-      <Pagination defaultCurrent={1} total={3} />
+      <Pagination defaultCurrent={1} defaultPageSize={10} total={3} />
     </div>
   )
 }

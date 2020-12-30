@@ -5,11 +5,11 @@ import { TOPIC_LOADING_START, TOPIC_LOADING_FINISH, TOPIC_CHANGE_TOPIC, DETAIL_L
 export function useGetTabList() {
   const dispatch = useDispatch()
   const {topic} = useSelector(state => state.topics)
-  return () => {
+  return (page=1, pageSize=10) => {
     dispatch({
       type: TOPIC_LOADING_START
     })
-    http.get(`/topics?tab=${topic}&page=1&limit=10`).then(res => {
+    http.get(`/topics?tab=${topic}&page=${page}&limit=${pageSize}`).then(res => {
       console.log(res)
       if (res.data.success) {
         dispatch({

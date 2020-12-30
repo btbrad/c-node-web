@@ -56,7 +56,7 @@ function TabList() {
         loading={loading}
       >
       </List>
-      <Pagination defaultCurrent={1} defaultPageSize={10} total={3} />
+      <Pagination defaultCurrent={1} defaultPageSize={10} total={300} />
     </div>
   )
 }

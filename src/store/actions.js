@@ -33,31 +33,20 @@ export function useChangeTopic(topic) {
   }
 }
 
-export function useSetTopicDetail() {
-  const dispatch = useDispatch()
-
-  return id => {
-    dispatch({
-      type: DETAIL_SET_ID,
-      payload: id
-    })
-  }
-}
 
 export function useGetTopicDetail() {
   const dispatch = useDispatch()
-  const { id } = useSelector(state => state.detail)
-  return () => {
-    // dispatch({
-    //   type: DETAIL_LOADING_START
-    // })
+  return (id) => {
+    dispatch({
+      type: DETAIL_LOADING_START
+    })
     http.get(`/topic/${id}`).then(res => {
       console.log(res)
       if (res.data.success) {
-        // dispatch({
-        //   type: DETAIL_SET_CONTENT,
-        //   payload: res.data.content
-        // })
+        dispatch({
+          type: DETAIL_SET_CONTENT,
+          payload: res.data.data
+        })
       }
     })
   }   

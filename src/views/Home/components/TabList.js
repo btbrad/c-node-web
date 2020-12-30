@@ -48,7 +48,7 @@ function TabList() {
               <TopicTag tab={item.tab}/>
               <Link to={`/topic/${item.id}`}>{item.title}</Link>
             </Col>
-            <Col>
+            <Col span={2} style={{textAlign: 'right'}}>
               {dayjs().from(item.create_at)}
             </Col>
           </Row>
